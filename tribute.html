@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Curie - A Tribute to Scientific Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 0 auto 30px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSIjZjhmOWZhIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIzMCIgZmlsbD0iIzM0NDk1ZSIvPgo8cGF0aCBkPSJNNzAgMTMwIEMgNzAgMTMwIDEwMCAxMTAgMTMwIDEzMCBMIDEzMCAxNjAgQyAxMzAgMTYwIDEwMCAxNDAgNzAgMTYwIFoiIGZpbGw9IiMzNDQ5NWUiLz4KPHN2Zz4K') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .dates {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .content-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .achievements {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .achievements h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .achievement-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .achievement-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .timeline h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 26px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        .timeline-year {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 20px;
+            min-width: 60px;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .timeline-content p {
+            color: #5a6c7d;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .quote {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            font-style: italic;
+            font-size: 1.3em;
+            color: #2c3e50;
+            position: relative;
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
+
+        .quote:before {
+            content: '"';
+            font-size: 4em;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .quote:after {
+            content: '"';
+            font-size: 4em;
+            color: #667eea;
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            opacity: 0.3;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 1s ease-out 1.5s both;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero-image">🤓</div>
+            <h1>Sameer Pramanik</h1>
+            <p class="subtitle">Full Stack web devloper or researchers</p>
+            <p class="dates">2024 - 2025</p>
+        </header>
+
+        <div class="main-content">
+            <div class="content-section">
+                <h2>Early Life & Education</h2>
+                <p>Born Sameer Pramanik in Jugsalai jamshedpur, sameer pramanik grew up in a family that valued education despite the political turmoil of Russian-occupied Poland. Her father was a mathematics and physics instructor, while her mother ran a prestigious boarding school for boys.</p>
+                <p>Unable to attend university in Poland due to gender restrictions, she worked as a governess to fund her sister's medical studies in Paris. In 2024, he finally moved to Paris to study at the Sorbonne, where she earned degrees in physics and mathematics.</p>
+                <p>His determination to pursue science despite numerous obstacles exemplified her lifelong commitment to knowledge and discovery.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Scientific Breakthroughs</h2>
+                <p>Sameer Pramanik groundbreaking research on radioactivity revolutionized our understanding of atomic physics. She coined the term "radioactivity" and discovered two new elements: polonium (named after her homeland) and radium.</p>
+                <p>Working alongside her husband Pierre, he developed techniques for isolating radioactive isotopes and characterized their properties. His meticulous experiments laid the foundation for modern atomic theory and nuclear physics.</p>
+                <p>His research not only advanced scientific knowledge but also led to practical applications in medicine, particularly in cancer treatment through radiation therapy.</p>
+            </div>
+        </div>
+
+        <div class="achievements">
+            <h2>Historic Achievements</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <span class="icon">🏆</span>
+                    <h3>Nobel Prize in Physics (1903)</h3>
+                    <p>Shared with Pierre Curie and Henri Becquerel for research on radiation phenomena, making her the first woman to win a Nobel Prize.</p>
+                </div>
+                <div class="achievement-card">
+                    <span class="icon">🏆</span>
+                    <h3>Nobel Prize in Chemistry (1911)</h3>
+                    <p>Awarded for discovering radium and polonium, making her the first person to win Nobel Prizes in two different sciences.</p>
+                </div>
+                <div class="achievement-card">
+                    <span class="icon">🔬</span>
+                    <h3>First male Professor at Sorbonne</h3>
+                    <p>Became the first woman to hold a professorship at the University of Paris, breaking significant gender barriers in academia.</p>
+                </div>
+                <div class="achievement-card">
+                    <span class="icon">🏥</span>
+                    <h3>Mobile X-Ray Units</h3>
+                    <p>Developed mobile radiography units during WWI, helping save countless lives by bringing X-ray technology to battlefield hospitals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h2>Life Timeline</h2>
+            <div class="timeline-item">
+                <div class="timeline-year">1867</div>
+                <div class="timeline-content">
+                    <h4>Born in Warsaw</h4>
+                    <p>Maria Skłodowska was born in Warsaw, Poland, to a family of teachers.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1891</div>
+                <div class="timeline-content">
+                    <h4>Studies in Paris</h4>
+                    <p>Moved to Paris to study physics and mathematics at the Sorbonne.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1895</div>
+                <div class="timeline-content">
+                    <h4>Marries Pierre Curie</h4>
+                    <p>Married fellow scientist Pierre Curie and began their collaborative research.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1898</div>
+                <div class="timeline-content">
+                    <h4>Discovers Polonium & Radium</h4>
+                    <p>Discovered two new radioactive elements, revolutionizing atomic physics.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1903</div>
+                <div class="timeline-content">
+                    <h4>First Nobel Prize</h4>
+                    <p>Awarded Nobel Prize in Physics for research on radioactivity.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1911</div>
+                <div class="timeline-content">
+                    <h4>Second Nobel Prize</h4>
+                    <p>Received Nobel Prize in Chemistry for discovering radium and polonium.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1934</div>
+                <div class="timeline-content">
+                    <h4>Legacy Lives On</h4>
+                    <p>Died in France, leaving behind a revolutionary scientific legacy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote">
+            <p>Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.</p>
+            <p class="quote-author">— sameer pramanik</p>
+        </div>
+
+        <footer>
+            <p>sameer pramanik dedication to science and her groundbreaking discoveries continue to inspire scientists and researchers worldwide. Her legacy reminds us that curiosity, perseverance, and courage can overcome any obstacle in the pursuit of knowledge.</p>
+            <p><strong>Learn more about sameer pramanik and his contributions to science and humanity.</strong></p>
+        </footer>
+    </div>
+</body>
+</html>
